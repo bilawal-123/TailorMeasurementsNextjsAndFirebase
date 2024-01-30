@@ -42,8 +42,6 @@ const fetchProfiles = async (authUser, setProfiles, setShowAddProfile) => {
     if (profilesData.length > 0) {
       setShowAddProfile(false);
     }
-
-    // setShopInfo(shopName, shopOwner);
   }
 };
 
@@ -55,7 +53,7 @@ export default function Profile() {
   const [shopOwner, setShopOwner] = useState("");
   const currentDate = new Date().toLocaleDateString("en-GB");
   const [profiles, setProfiles] = useState([]);
-  const [showAddProfile, setShowAddProfile] = useState(true);
+  const [showAddProfile, setShowAddProfile] = useState(false);
   // variables Edit/Update Profile
   const [editForm, setEditForm] = useState(false);
   const [editShopName, setEditShopName] = useState("");
@@ -212,7 +210,10 @@ export default function Profile() {
       });
     }
   };
-
+  const Cancel = () => {
+    setEditForm(false);
+    setShowAddProfile(false);
+  };
   return !authUser ? (
     <Loader />
   ) : (
@@ -221,10 +222,7 @@ export default function Profile() {
         <h1 className="heading1">Profile</h1>
         <div className="flex gap-3">
           {editForm && (
-            <button
-              onClick={() => deleteProfile(profiles[0].id)}
-              className="button-default"
-            >
+            <button onClick={Cancel} className="button-default">
               <IoIosArrowRoundBack />
               Cancel
             </button>
@@ -260,7 +258,7 @@ export default function Profile() {
         </div>
       </div>
       <ToastContainer />
-      {/* Place this component at the top of your component tree */}
+
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
       {showAddProfile && (
         <form>
@@ -348,15 +346,10 @@ export default function Profile() {
                   className="block mb-1 min-h-[auto] border border-slate-600 w-full  bg-gray-100 px-3 py-[0.32rem] leading-[1.6] outline-none focus:border-teal-700"
                   type="text"
                   value={currentDate}
-                  readOnly // Make it read-only to prevent user input
+                  readOnly
                 />
               </div>
             </div>
-          </div>
-          <div className="text-right mt-4 mb-10">
-            {/* <button onClick={updateProfile} className="button-style">
-              Add Profile
-            </button> */}
           </div>
 
           {/* Display the selected profile if editing */}
@@ -386,16 +379,6 @@ export default function Profile() {
               </div>
             ))}
           </div>
-
-          {/* <ul>
-            {profiles.map((profile) => (
-              <li key={profile.id}>
-                <p>Shop Name: {shop.shopNameContext}</p>
-                <p>Shop Owner: {shop.shopOwnerContext}</p>
-                <p>Date: {profile.date}</p>
-              </li>
-            ))}
-          </ul> */}
         </div>
       )}
     </div>
