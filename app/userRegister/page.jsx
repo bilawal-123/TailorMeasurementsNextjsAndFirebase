@@ -14,7 +14,6 @@ import { CiLock } from "react-icons/ci";
 import { RiUserAddFill } from "react-icons/ri";
 import { TbBrandGoogleFilled } from "react-icons/tb";
 export default function UserRegister() {
-  const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const { authUser, isLoading, setAuthUser } = useAuth();
@@ -28,16 +27,13 @@ export default function UserRegister() {
 
   const provider = new GoogleAuthProvider();
   const signupHandler = async (e) => {
-    if (!username || !email || !password) return;
+    if (!email || !password) return;
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(auth.currentUser, {
-        displayName: username,
-      });
+
       setAuthUser({
         uid: user.uid,
         email: user.email,
-        username,
       });
     } catch (error) {
       console.error("An Error Occured", error);
@@ -64,13 +60,6 @@ export default function UserRegister() {
           </h1>
         </div>
         <form onSubmit={(e) => e.preventDefault()}>
-          <input
-            className="block mb-3 min-h-[auto] border-2 text-white border-gray-300 w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none focus:border-white"
-            placeholder="Username"
-            type="text"
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          />
           <input
             className="block mb-3 min-h-[auto] border-2 text-white border-gray-300 w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none focus:border-white"
             placeholder="Email"

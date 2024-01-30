@@ -67,7 +67,6 @@ export default function MeasureList() {
 
       // Set the measurements state with the data array.
       setMeasurementsList(data);
-      etNoRecordsFound(data.length === 0); // Set noRecordsFound based on data length
     } catch (error) {
       console.error("An error occured", error);
     }
@@ -196,7 +195,11 @@ export default function MeasureList() {
         </div>
       </div>
 
-      {isLoading && <Loader />}
+      {isLoading && (
+        <div>
+          <Loader />
+        </div>
+      )}
 
       {noRecordsFound && (
         <div className="border border-gray-200 flex justify-center items-center flex-col text-center h-[40vh] mt-10">
@@ -321,7 +324,7 @@ export default function MeasureList() {
         </>
       )}
       {/* {!isLoading && measurementsList.length < 1 && !noRecordsFound && ( */}
-      {noRecordsFound && !isLoading && !noRecordsFound && (
+      {!isLoading && measurementsList.length < 1 && !noRecordsFound && (
         <div className="border border-gray-200 flex justify-center items-center flex-col text-center h-[40vh] mt-10">
           <p className="text-5xl rotate-45 text-white mb-6 inline-flex bg-purple-700 rounded-full p-4 shadow-md shadow-gray-500 ">
             <TbHourglass />

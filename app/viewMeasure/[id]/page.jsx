@@ -48,7 +48,11 @@ export default function ViewMeasure() {
   }, [id]);
 
   if (measure === null) {
-    return <Loader />;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   const deleteMeasurement = async (docId) => {
@@ -70,7 +74,9 @@ export default function ViewMeasure() {
   };
 
   return !authUser ? (
-    <Loader />
+    <div>
+      <Loader />
+    </div>
   ) : (
     <>
       <div className="">
