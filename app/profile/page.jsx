@@ -218,7 +218,7 @@ export default function Profile() {
     <Loader />
   ) : (
     <div className="">
-      <div className="flex justify-between mb-4 items-center">
+      <div className="page-header-group">
         <h1 className="heading1">Profile</h1>
         <div className="flex gap-3">
           {editForm && (
@@ -264,7 +264,7 @@ export default function Profile() {
         <form>
           <div className="box-style">
             <h2 className="heading2">Personal Info</h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="personal-detail-box">
               <div>
                 <label className="label-style">
                   Shop Name <span className="asterisk">*</span>
@@ -315,7 +315,7 @@ export default function Profile() {
         <form>
           <div className="box-style">
             <h2 className="heading2">Update Personal Info</h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="personal-detail-box">
               <div>
                 <label className="label-style">
                   Update Shop Name <span className="asterisk">*</span>
@@ -360,7 +360,7 @@ export default function Profile() {
           <div className="box-style">
             <h2 className="heading2">Shop Details</h2>
             {profiles.map((profile) => (
-              <div className="grid grid-cols-3 gap-3" key={profile.id}>
+              <div className="personal-detail-box" key={profile.id}>
                 <div>
                   <span className="label-style">
                     Shop Name <span className="asterisk">*</span>

@@ -173,7 +173,7 @@ export default function MeasureList() {
     <>
       <ToastContainer />
 
-      <div className="my-2 flex justify-between items-center sm:flex-row flex-col">
+      <div className="page-header-group">
         <h1 className="heading1 !mb-0 inline-flex items-center gap-1">
           Customers List
         </h1>

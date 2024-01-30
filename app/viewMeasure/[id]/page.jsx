@@ -76,7 +76,7 @@ export default function ViewMeasure() {
       <div className="">
         {/* Pass the ref to the Print component */}
 
-        <div className="flex justify-between mb-4 items-center">
+        <div className="page-header-group">
           <h1 className="heading1 m-0">View Measurement</h1>
           <div className="flex gap-3">
             <Link href={`/editMeasure/${id}`} className="button-style">
@@ -97,7 +97,7 @@ export default function ViewMeasure() {
         <div className="box-style">
           <h2 className="heading2">Personal Detail</h2>
 
-          <div className="grid grid-cols-4 gap-3">
+          <div className="personal-detail-box">
             <div>
               <span className="label-style">
                 Customer Name <span className="asterisk">*</span>
@@ -122,12 +122,12 @@ export default function ViewMeasure() {
           </div>
         </div>
 
-        <div className="flex justify-between items-start">
-          <div className="w-[48%] box-style">
+        <div className="flex md:flex-row flex-col justify-between items-start">
+          <div className="w-full md:w-[48%] box-style">
             <h2 className="heading2">Qameez Detail</h2>
 
             <div className="grid gap-3">
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Lambai
                   <span className="asterisk">*</span>
@@ -136,7 +136,7 @@ export default function ViewMeasure() {
                   <DecimalConversion value={measure?.shirtLambai} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Bazu
                   <span className="asterisk">*</span>
@@ -145,7 +145,7 @@ export default function ViewMeasure() {
                   <DecimalConversion value={measure?.shirtBazu} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Tera
                   <span className="asterisk">*</span>
@@ -154,7 +154,7 @@ export default function ViewMeasure() {
                   <DecimalConversion value={measure?.shirtTera} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Kandha
                   <span className="asterisk">*</span>
@@ -164,7 +164,7 @@ export default function ViewMeasure() {
                 </p>
               </div>
 
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Chati
                   <span className="asterisk">*</span>
@@ -173,13 +173,13 @@ export default function ViewMeasure() {
                   <DecimalConversion value={measure?.shirtChati} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">Kamar</span>
                 <p className="text-lg  font-semibold">
                   <DecimalConversion value={measure?.shirtKamar} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Ghera
                   <span className="asterisk">*</span>
@@ -188,14 +188,14 @@ export default function ViewMeasure() {
                   <DecimalConversion value={measure?.shirtGhera} />
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Daman
                   <span className="asterisk">*</span>
                 </span>
                 <p className="text-lg  font-semibold">{measure?.shirtDaman}</p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">Coller</span>
                 <div className="text-lg font-semibold">
                   {/* Coller Data */}
@@ -230,7 +230,7 @@ export default function ViewMeasure() {
                   )}
                 </div>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">
                   Kaf Details
                   <span className="asterisk">*</span>
@@ -247,13 +247,13 @@ export default function ViewMeasure() {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">Side Pocket</span>
                 <p className="text-lg  font-semibold">
                   {measure?.shirtSidePocket}
                 </p>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-300">
+              <div className="view-measure-row">
                 <span className="label-style !mb-0">Front Pocket</span>
                 <p className="text-lg  font-semibold">
                   {measure?.shirtFrontPocket}
@@ -265,12 +265,12 @@ export default function ViewMeasure() {
               </div>
             </div>
           </div>
-          <div className="w-[48%] box-style">
+          <div className="w-full md:w-[48%] box-style">
             <h2 className="heading2">Shalwar Detail</h2>
 
             <div className="grid gap-3">
               <div className="grid gap-3">
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">
                     Shalwar
                     <span className="asterisk">*</span>
@@ -279,7 +279,7 @@ export default function ViewMeasure() {
                     <DecimalConversion value={measure?.pentSize} />
                   </p>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">
                     Pancha <span className="asterisk">*</span>
                   </span>
@@ -287,24 +287,24 @@ export default function ViewMeasure() {
                     <DecimalConversion value={measure?.pentPancha} />
                   </p>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">Gheer</span>
                   <p className="text-lg  font-semibold">
                     <DecimalConversion value={measure?.pentGheer} />
                   </p>
                 </div>
 
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">Pancha Style</span>
                   <p className="text-lg  font-semibold">
                     {measure?.pentPanchaStyle}
                   </p>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">Style</span>
                   <p className="text-lg  font-semibold">{measure?.pentStyle}</p>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-300">
+                <div className="view-measure-row">
                   <span className="label-style !mb-0">Pocket</span>
                   <p className="text-lg  font-semibold">
                     {measure?.pentPocket}
@@ -319,7 +319,9 @@ export default function ViewMeasure() {
           </div>
           {/* end of parent */}
         </div>
-        <Print ref={componentRef} measure={measure} className="hidden" />
+        <div className="hidden">
+          <Print ref={componentRef} measure={measure} className="hidden" />
+        </div>
       </div>
     </>
   );

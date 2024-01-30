@@ -101,7 +101,7 @@ export default function Navbar() {
           </Link>
           <Link href={"/addMeasure"} className="nav-link-style">
             <TbRulerMeasure className="nav-link-icon-style" />{" "}
-            <span className="hidden sm:block">Add Customer</span>
+            <span className="hidden sm:block">Add Measurement</span>
           </Link>
           {!authUser ? (
             <Link href={"/userRegister"} className="nav-link-style">

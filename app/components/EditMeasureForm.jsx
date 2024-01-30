@@ -247,8 +247,8 @@ export default function EditMeasureForm() {
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
       <div className="">
         <form onSubmit={handleEditSubmit}>
-          <div className="flex justify-between mb-4 items-center">
-            <h1 className="heading1 !m-0">Update Measurement</h1>
+          <div className="page-header-group">
+            <h1 className="heading1">Update Measurement</h1>
             <div className="flex gap-3">
               <button onClick={Cancel} className="button-default">
                 <IoIosArrowRoundBack />
@@ -265,7 +265,7 @@ export default function EditMeasureForm() {
           </div>
           <div className="box-style">
             <h2 className="heading2">Update Personal Detail</h2>
-            <div className="grid grid-cols-4 gap-3">
+            <div className="personal-detail-box">
               <div>
                 <label className="label-style">
                   Customer Name <span className="asterisk">*</span>
@@ -317,8 +317,8 @@ export default function EditMeasureForm() {
           </div>
           {/* Qmaeez/Shirt Input Fields */}
 
-          <div className="flex justify-between items-start">
-            <div className="w-[48%] box-style">
+          <div className="flex md:flex-row flex-col justify-between items-start">
+            <div className="w-full md:w-[48%] box-style">
               <h2 className="heading2">Update Qameez Detail</h2>
 
               <div className="grid gap-3">
@@ -432,10 +432,10 @@ export default function EditMeasureForm() {
                 <div>
                   <h3 className="heading3 ">Coller Details</h3>
                   <div
-                    className="grid gap-2"
-                    style={{
-                      gridTemplateColumns: "repeat(auto-fit, minmax(22%, 1fr))",
-                    }}
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+                    // style={{
+                    //   gridTemplateColumns: "repeat(auto-fit, minmax(22%, 1fr))",
+                    // }}
                   >
                     <div>
                       <label className="label-style">Coller Type</label>
@@ -575,10 +575,10 @@ export default function EditMeasureForm() {
                 <div>
                   <h3 className="heading3 ">Kaf Details</h3>
                   <div
-                    className="grid gap-2"
-                    style={{
-                      gridTemplateColumns: "repeat(auto-fit, minmax(22%, 1fr))",
-                    }}
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+                    // style={{
+                    //   gridTemplateColumns: "repeat(auto-fit, minmax(22%, 1fr))",
+                    // }}
                   >
                     <div>
                       <label className="label-style">
@@ -656,7 +656,7 @@ export default function EditMeasureForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[48%] box-style">
+            <div className="w-full md:w-[48%] box-style">
               <h2 className="heading2">Update Shalwar Detail</h2>
 
               <div className="grid gap-3">
