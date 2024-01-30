@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { TbPlus } from "react-icons/tb";
+import { IoIosArrowRoundBack } from "react-icons/io";
 export default function AddMeasure() {
   const { authUser, isLoading } = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
@@ -196,14 +197,23 @@ export default function AddMeasure() {
     setShirtBanStyle("");
     setShirtMaghziSize("");
   };
+  const Cancel = () => {
+    router.back();
+  };
   return !authUser ? (
-    <Loader />
+    <div className="">
+      <Loader />
+    </div>
   ) : (
     <div className="">
       <div className="flex justify-between mb-4 items-center">
         <h1 className="heading1 m-0">Add Measurement</h1>
 
         <div className="flex gap-3">
+          <button onClick={Cancel} className="button-default">
+            <IoIosArrowRoundBack />
+            Cancel
+          </button>
           <button onClick={addMeasurement} className="button-style">
             <TbPlus /> Add Measurement
           </button>

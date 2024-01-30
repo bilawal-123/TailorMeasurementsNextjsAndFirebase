@@ -5,7 +5,7 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import Loader from "./loader";
 import { TbDeviceFloppy } from "react-icons/tb";
-import { IoIosSave } from "react-icons/io";
+import { IoIosArrowRoundBack, IoIosSave } from "react-icons/io";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -221,7 +221,11 @@ export default function EditMeasureForm() {
   };
 
   if (measure === null) {
-    return <Loader />;
+    return (
+      <div className="">
+        <Loader />
+      </div>
+    );
   }
   // Function to reset state values
   const resetValues = () => {
@@ -233,6 +237,9 @@ export default function EditMeasureForm() {
     setNewShirtBanStyle("");
     setNewShirtMaghziSize("");
   };
+  const Cancel = () => {
+    router.back();
+  };
   return (
     <div>
       <ToastContainer />
@@ -242,9 +249,19 @@ export default function EditMeasureForm() {
         <form onSubmit={handleEditSubmit}>
           <div className="flex justify-between mb-4 items-center">
             <h1 className="heading1 !m-0">Update Measurement</h1>
-            <button type="submit" disabled={isEditing} className="button-style">
-              <IoIosSave /> {isEditing ? "Saving..." : "Save Changes"}
-            </button>
+            <div className="flex gap-3">
+              <button onClick={Cancel} className="button-default">
+                <IoIosArrowRoundBack />
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={isEditing}
+                className="button-style"
+              >
+                <IoIosSave /> {isEditing ? "Saving..." : "Save Changes"}
+              </button>
+            </div>
           </div>
           <div className="box-style">
             <h2 className="heading2">Update Personal Detail</h2>
