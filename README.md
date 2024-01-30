@@ -1,5 +1,6 @@
 
-![alt text]([https://billofficials.tinytake.com/media/155a0cb?filename=1699794760449_TinyTake12-11-2023-05-12-35_638353915589545552.png&sub_type=thumbnail_preview&type=attachment&width=1198&height=543](https://billofficials.tinytake.com/msc/OTIwNzYyNF8yMjczOTY0OA))
+![alt text](https://billofficials.tinytake.com/msc/OTIwNzYyNF8yMjczOTY0OA)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
