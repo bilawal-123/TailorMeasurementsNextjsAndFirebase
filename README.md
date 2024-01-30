@@ -31,6 +31,16 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Utilitties
+1. NextJS https://nextjs.org/
+2. Firbase Firestore https://firebase.google.com/
+3. Tailwind CSS: https://tailwindcss.com/
+4. React Icons: https://react-icons.github.io/react-icons/
+5. React-to-Print: https://www.npmjs.com/package/react-to-print
+6. Toastify: https://www.npmjs.com/package/react-toastify
+
+## Demo: 
+https://tailor-liard.vercel.app/ 
 
 ## Deploy on Vercel
 
