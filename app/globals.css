@@ -43,9 +43,15 @@ select {
 }
 
 main > div {
-  @apply py-8 px-8 bg-white shadow-2xl w-[1000px] max-w-full mx-auto z-10;
+  @apply py-4 px-4 sm:px-8 sm:py-8 bg-white shadow-2xl w-[1000px] max-w-full mx-auto z-10;
 }
 nav,
 footer {
   @apply z-10;
+}
+.nav-link-style {
+  @apply flex items-center space-x-1 sm:space-x-2 text-gray-50;
+}
+.nav-link-icon-style {
+  @apply text-yellow-200 text-2xl;
 }

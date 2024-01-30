@@ -177,7 +177,7 @@ export default function MeasureList() {
         <h1 className="heading1 !mb-0 inline-flex items-center gap-1">
           Customers List
         </h1>
-        <div className="block relative">
+        <div className="block relative mt-2 sm:mt-0 w-full sm:w-auto">
           <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
             <TbSearch />
           </span>

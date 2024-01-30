@@ -18,6 +18,8 @@ import {
   TbLogin,
   TbUserCircle,
 } from "react-icons/tb";
+import { RiHome6Line } from "react-icons/ri";
+
 // If loading a variable font, you don't need to specify the font weight
 const nova = Nova_Square({
   subsets: ["latin"],
@@ -64,11 +66,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className="relative flex w-full flex-wrap items-center justify-center bg-gray-700 py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+      className="relative flex w-full flex-wrap items-center justify-center bg-gray-700 py-2 text-neutral-500 shadow-lg "
       data-te-navbar-ref
     >
-      <div className="w-[1000px] max-w-full  px-4 flex md:justify-between justify-center flex-wrap ">
-        <div>
+      <div className="w-[1000px] max-w-full px-4 flex justify-center items-center flex-col sm:justify-between  sm:flex-row">
+        <div className="mb-2.5 md:mb-0">
           <Link href={"/"} className="flex items-center gap-2">
             <span className="bg-white w-6 h-6 inline-flex items-center justify-center rounded-sm">
               <Image
@@ -91,45 +93,30 @@ export default function Navbar() {
           </Link>
         </div>
         <div
-          className={`${lato.className} flex md:space-x-10 space-x-2 text-sm`}
+          className={`${lato.className} flex md:space-x-10 space-x-2 text-sm w-full sm:w-auto justify-between sm:justify-end gap-7 sm:gap-0`}
         >
-          <Link
-            href={"/"}
-            className="flex items-center md:space-x-2  text-gray-50 "
-          >
-            <TbNeedleThread className="text-yellow-200 text-2xl hidden md:block" />{" "}
-            <span>Home</span>
+          <Link href={"/"} className="nav-link-style">
+            <RiHome6Line className="nav-link-icon-style" />{" "}
+            <span className="hidden sm:block">Home</span>
           </Link>
-          <Link
-            href={"/addMeasure"}
-            className="flex items-center space-x-2 text-gray-50"
-          >
-            <TbRulerMeasure className="text-yellow-200 text-2xl hidden md:block" />{" "}
-            <span>Add Measurement</span>
+          <Link href={"/addMeasure"} className="nav-link-style">
+            <TbRulerMeasure className="nav-link-icon-style" />{" "}
+            <span className="hidden sm:block">Add Customer</span>
           </Link>
           {!authUser ? (
-            <Link
-              href={"/userRegister"}
-              className="flex items-center space-x-2 text-gray-50"
-            >
-              <TbLogin className="text-yellow-200 text-2xl hidden md:block" />
-              <span>Register</span>
+            <Link href={"/userRegister"} className="nav-link-style">
+              <TbLogin className="nav-link-icon-style" />
+              <span className="hidden sm:block">Register</span>
             </Link>
           ) : (
             <>
-              <button
-                onClick={signOut}
-                className="flex items-center space-x-2 text-gray-50"
-              >
-                <TbLogout className="text-yellow-200 text-2xl hidden md:block" />
-                <span>Sign out</span>
+              <button onClick={signOut} className="nav-link-style">
+                <TbLogout className="nav-link-icon-style" />
+                <span className="hidden sm:block">Sign out</span>
               </button>
-              <Link
-                href="/profile"
-                className="flex items-center space-x-2 text-gray-50"
-              >
-                <TbUserCircle className="text-yellow-200 text-2xl hidden md:block" />
-                <span>
+              <Link href="/profile" className="nav-link-style">
+                <TbUserCircle className="nav-link-icon-style" />
+                <span className="hidden sm:block">
                   {/* {shopOwner || "Owner Name"} */}
                   {shop.shopOwnerContext}
                 </span>
