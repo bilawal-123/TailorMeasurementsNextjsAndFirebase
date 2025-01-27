@@ -319,7 +319,7 @@ export default function ViewMeasure() {
           </div>
           {/* end of parent */}
         </div>
-        <div className="">
+        <div className="hidden">
           <Print ref={componentRef} measure={measure} className="hidden" />
         </div>
       </div>
