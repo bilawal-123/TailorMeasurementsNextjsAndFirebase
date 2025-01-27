@@ -20,12 +20,12 @@ const Print = forwardRef(({ measure }, ref) => {
     <div>
       <div
         ref={ref}
-        className="m-0 flex items-start justify-start text-left  w-[300px] max-w-[300px] overflow-hidden"
+        className="m-0 flex items-start justify-start text-left  w-[250px] max-w-[250px] overflow-hidden"
       >
         {/* Your print-friendly content goes here */}
-        <div className="print-container border border-gray-300 p-3 w-full">
-          <p className="flex justify-between items-center  mb-2 border-b pb-2 border-dashed border-gray-300 gap-2">
-            <div className="font-bold flex items-center gap-1 text-xs w-[100px]">
+        <div className="print-container border border-gray-400 p-3 w-full relative">
+          <p className="flex justify-start flex-col items-start  mb-2 border-b-2 pb-2 border-dashed border-gray-400 gap-2">
+            <div className="font-bold flex items-center justify-center gap-1 text-xs w-full">
               <Image
                 src="/icon-black-bg-white.png"
                 alt="Example Image"
@@ -36,14 +36,23 @@ const Print = forwardRef(({ measure }, ref) => {
               />
               {shop.shopNameContext}
             </div>
-            <span className=" text-xs max-w-[calc(100%_-_108px)]  inline-flex justify-end truncate ...">
-              {measure.username}
+            <span className="text-xs inline-flex items-center gap-1 justify-start font-medium w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                className="min-w-4 min-h-4 h-4 w-4"
+              >
+                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z" />
+              </svg>{" "}
+              <span className="truncate w-[calc(100%-55px)] mt-1">
+                {measure.username}
+              </span>
             </span>
             {/* <span>{measure.phone}</span> */}
           </p>
-          <div className="shalwar-qameez flex justify-between">
+          <div className="shalwar-qameez flex justify-between content-style relative text-[13px] text-black">
             <div className="col-1 w-2/5 pr-1">
-              <table className="w-full font-bold text-lg">
+              <table className="w-full font-bold">
                 <tbody>
                   {measure.shirtLambai && (
                     <tr>
@@ -100,11 +109,11 @@ const Print = forwardRef(({ measure }, ref) => {
                   )}
 
                   {measure.shirtGhera && (
-                    <tr className="pb-3">
-                      <td className="border-b-2 border-gray-400 pb-2">
+                    <tr className=" border-b-2 border-gray-400 pb-2 border-dashed">
+                      <td className="pb-3">
                         <DecimalConversion value={measure.shirtGhera} />
                       </td>
-                      <td className="text-right text-sm font-normal pr-3 border-b-2 border-gray-400  pb-2">
+                      <td className="text-right text-sm font-normal pr-3 pb-2">
                         گھیرا
                       </td>
                     </tr>
@@ -112,7 +121,7 @@ const Print = forwardRef(({ measure }, ref) => {
 
                   {measure.pentSize && (
                     <tr>
-                      <td className=" pt-2">
+                      <td className="pt-2">
                         <DecimalConversion value={measure.pentSize} />
                       </td>
                       <td className="text-right text-sm font-normal pr-3 pt-2">
@@ -134,7 +143,7 @@ const Print = forwardRef(({ measure }, ref) => {
                 </tbody>
               </table>
             </div>
-            <div className="col-2 pl-2 w-3/5  text-right  border-l border-gray-300">
+            <div className="col-2 pl-2 w-3/5 text-right border-l-2 border-dashed border-gray-400">
               <p className="mb-1.5">
                 {measure.shirtCollerType && (
                   <table className="w-full">
@@ -328,23 +337,25 @@ const Print = forwardRef(({ measure }, ref) => {
                   {measure?.pentPocket === "Double" && " ڈبل"}
                 </span>
               </p>
-              {measure?.shirtNotes && (
-                <p className="mb-1.5 pt-1.5 border-t border-gray-300">
-                  <>
-                    <p>قمیض نوٹ</p>
-                    <p> {measure?.shirtNotes}</p>
-                  </>
-                </p>
-              )}
-              {measure?.pentNotes && (
-                <p className="mb-1.5 pt-1.5 border-t border-gray-300">
-                  <>
-                    <p>شلوار نوٹ</p>
-                    <p> {measure?.pentNotes}</p>
-                  </>
-                </p>
-              )}
             </div>
+            {/* NOTES SECTION */}
+          </div>
+          <div className="">
+            {measure?.shirtNotes && (
+              <p className="mb-1.5 pt-1.5 mt-1 border-t-2 border-dashed border-gray-400 text-right">
+                <p>قمیض نوٹ</p>
+                <p className="text-xs"> {measure?.shirtNotes}</p>
+              </p>
+            )}
+            {measure?.pentNotes && (
+              <p className="mb-1.5 pt-1.5 border-t-2 border-dashed border-gray-400 text-right">
+                <p>شلوار نوٹ</p>
+                <p className="text-xs"> {measure?.pentNotes}</p>
+              </p>
+            )}
+          </div>
+          <div className="bg-gray-400 text-white text-center py-1 text-[10px] tracking-[7px] font-medium">
+            GREEN TAILORS
           </div>
         </div>
 

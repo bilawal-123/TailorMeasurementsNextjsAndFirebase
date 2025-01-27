@@ -72,6 +72,8 @@ export default function Profile() {
       const firstProfile = profiles[0];
       shop.setShopNameContext(firstProfile.shopName);
       shop.setShopOwnerContext(firstProfile.shopOwner);
+    } else {
+      setShowAddProfile(true);
     }
   }, [authUser, isLoading, profiles]);
 
@@ -215,7 +217,9 @@ export default function Profile() {
     setShowAddProfile(false);
   };
   return !authUser ? (
-    <Loader />
+    <div>
+      <Loader />
+    </div>
   ) : (
     <div className="">
       <div className="page-header-group">

@@ -9,13 +9,7 @@ import { useRouter, useParams } from "next/navigation";
 import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import Link from "next/link";
-import {
-  TbPencil,
-  TbEye,
-  TbTrash,
-  TbArrowNarrowLeft,
-  TbPrinter,
-} from "react-icons/tb";
+import { TbPencil, TbTrash, TbPrinter } from "react-icons/tb";
 import DecimalConversion from "@/app/components/decimalConversion";
 
 // import "@/public/print-styles.css";
@@ -325,7 +319,7 @@ export default function ViewMeasure() {
           </div>
           {/* end of parent */}
         </div>
-        <div className="hidden">
+        <div className="">
           <Print ref={componentRef} measure={measure} className="hidden" />
         </div>
       </div>
